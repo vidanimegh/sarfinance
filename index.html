@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<!--
+ * A Design by GraphBerry
+ * Author: GraphBerry
+ * Author URL: http://graphberry.com
+ * License: http://graphberry.com/pages/license
+-->
+<html lang="en">
+    
+    <head>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Welcome to SAR Finance</title>
+        <!-- Load Roboto font -->
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <!-- Load css styles -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css" />
+        <link rel="stylesheet" type="text/css" href="css/style_new.css" />
+        <link rel="stylesheet" type="text/css" href="css/pluton.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
+        <!--[if IE 7]>
+            <link rel="stylesheet" type="text/css" href="css/pluton-ie7.css" />
+        <![endif]-->
+        <link rel="stylesheet" type="text/css" href="css/jquery.cslider.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+        <link rel="stylesheet" type="text/css" href="css/animate.css" />
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72.png">
+        <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57.png">
+        <!-- <link rel="shortcut icon" href="images/ico/logo_1.jpg"> -->
+
+        <script type="text/javascript">
+            function formatNumber(val,digits,minval,maxval)
+            {
+                var sval = "" + numval(val,digits,minval,maxval);
+                var i;
+                var iDecpt = sval.indexOf(".");
+                if (iDecpt < 0) iDecpt = sval.length;
+                if (digits != null && digits > 0)
+                {
+                    if (iDecpt == sval.length)
+                        sval = sval + ".";
+                    var places = sval.length - sval.indexOf(".") - 1;
+                    for (i = 0; i < digits - places; i++)
+                        sval = sval + "0";
+                }
+                var firstNumchar = 0;
+                if (sval.charAt(0) == "-") firstNumchar = 1;
+                for (i = iDecpt - 3; i > firstNumchar; i-= 3)
+                    sval = sval.substring(0, i) + "," + sval.substring(i);
+
+                return sval;
+            }
+
+            function numval(val,digits,minval,maxval)
+            {
+                val = makeNumeric(val);
+                if (val == "" || isNaN(val)) val = 0;
+                val = parseFloat(val);
+                if (digits != null)
+                {
+                    var dec = Math.pow(10,digits);
+                    val = (Math.round(val * dec))/dec;
+                }
+                if (minval != null && val < minval) val = minval;
+                if (maxval != null && val > maxval) val = maxval;
+                return parseFloat(val);
+            }
+
+            function makeNumeric(s)
+            {
+                return filterChars(s, "1234567890.-");
+            }
+
+            function filterChars(s, charList)
+            {
+                var s1 = "" + s; // force s1 to be a string data type
+                var i;
+                for (i = 0; i < s1.length; )
+                {
+                    if (charList.indexOf(s1.charAt(i)) < 0)
+                        s1 = s1.substring(0,i) + s1.substring(i+1, s1.length);
+                    else
+                        i++;
+                }
+                return s1;
+            }
+        </script>
+    </head>
+    
+    <body>
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a href="#" class="brand">
+                        <img src="images/sar_logo_yellow.png" width="120" height="40" alt="Logo" />
+                        <!-- This is website logo -->
+                    </a>
+                    <!-- Navigation button, visible on small resolution -->
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="icon-menu"></i>
+                    </button>
+                    <!-- Main navigation -->
+                    <div class="nav-collapse collapse pull-right">
+                        <ul class="nav" id="top-navigation">
+                            <li class="active"><a href="#home">Home</a></li>
+                            <li><a href="#service">Services</a></li>
+                            <li><a href="#utilities">Utilities</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- End main navigation -->
+                </div>
+            </div>
+        </div>
+        <!-- Start home section -->
+        <div id="home">
+            <!-- Start cSlider -->
+            <div id="da-slider" class="da-slider">
+                <div class="triangle"></div>
+                <!-- mask elemet use for masking background image
+                <div class="mask"></div> -->
+                <!-- All slides centred in container element -->
+                <div class="container">
+                    <!-- Start first slide -->
+                    <div class="da-slide">
+                        <h2 class="fittext2">Welcome to pluton theme</h2>
+                        <h4>Clean & responsive</h4>
+                        <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
+                        <a href="#" class="da-link button">Read more</a>
+                        <div class="da-img">
+                            <img src="images/Slider01.png" alt="image01" width="320">
+                        </div>
+                    </div>
+                    <!-- End first slide -->
+                    <!-- Start second slide -->
+                    <div class="da-slide">
+                        <h2>Easy management</h2>
+                        <h4>Easy to use</h4>
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                        <a href="#" class="da-link button">Read more</a>
+                        <div class="da-img">
+                            <img src="images/Slider02.png" width="320" alt="image02">
+                        </div>
+                    </div>
+                    <!-- End second slide -->
+                    <!-- Start third slide -->
+                    <div class="da-slide">
+                        <h2>Revolution</h2>
+                        <h4>Customizable</h4>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+                        <a href="#" class="da-link button">Read more</a>
+                        <div class="da-img">
+                            <img src="images/Slider03.png" width="320" alt="image03">
+                        </div>
+                    </div>
+                    <!-- Start third slide -->
+                    <!-- Start cSlide navigation arrows -->
+                    <div class="da-arrows">
+                        <span class="da-arrows-prev"></span>
+                        <span class="da-arrows-next"></span>
+                    </div>
+                    <!-- End cSlide navigation arrows -->
+                </div>
+            </div>
+        </div>
+        <!-- End home section -->
+        <!-- Service section start -->
+        <div class="section secondary-section" id="service">
+            <div class="container">
+                <div class="container">
+                    <div class="title">
+                        <h1>Financial Services</h1>
+                    </div>
+                    <div class="row-fluid">
+                        
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/home loan.jpeg" alt="service 1" />
+                                </div>
+                                <h3>Home Loan</h3>
+                                <p>We help you own your dream house. Contact us for a New Loan, Balance Transfer or Top up over existing loan.</p>
+
+                            </div>
+                        </div>
+                
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/mortgage loan.jpg" alt="service 2" />
+                                </div>
+                                <h3>Mortgage Loan</h3>
+                                <p>Need money and have a Residential, Commercial or Industrial Property? Contact us to help you finance your need.</p>
+                            </div>
+                        </div>
+                
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/working capital finance.jpeg" alt="service 2" />
+                                </div>
+                                <h3>Working Capital Finance</h3>
+                                <p>Looking for smooth business operations through bank borrowings? We can assist you in getting your desired type of facility, be it Cash Credit, Overdraft, Export / Import Finance.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="clearfix"></div> -->
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/Auto_Loans_Logo.png" alt="service 2" />
+                                </div>
+                                <h3>Auto Loan</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/Lease-Rent-Discounting.jpg" alt="service 2" />
+                                </div>
+                                <h3>Lease Rental Discounting</h3>
+                                <p>The rent you earn also gets you a loan.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/unsecured loans1.jpeg" alt="service 2" />
+                                </div>
+                                <h3>Unsecured Loans</h3>
+                                <p>Get Finance on the basis of your Financial Statements without any security.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="clearfix"></div> -->
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/project-finance.jpg" alt="service 2" />
+                                </div>
+                                <h3>Project Finance</h3>
+                                <p>Get Financial Assistance for your project.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/term loan.jpg" alt="service 2" />
+                                </div>
+                                <h3>Term Loan</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/commercial vehicle loan.jpeg" alt="service 2" />
+                                </div>
+                                <h3>Commercial Vehicle Loan</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="title">
+                        <h1>Consultancy Services</h1>
+                    </div>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/accounting.jpg" alt="service 2" />
+                                </div>
+                                <h3>Accounting</h3>
+                                <p>Get Financial Assistance for your project.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/management audit.jpg" alt="service 2" />
+                                </div>
+                                <h3>Management Audit</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/internal audit.jpg" alt="service 2" />
+                                </div>
+                                <h3>Internal Audit</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                        <!-- <div class="clearfix"></div> -->
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/tax consultant.jpeg" alt="service 2" />
+                                </div>
+                                <h3>Tax Consultancy</h3>
+                                <p>Get Financial Assistance for your project.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/nri-taxation.jpg" alt="service 2" />
+                                </div>
+                                <h3>NRI Taxation</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    
+                        <div class="span4">
+                            <div class="centered service">
+                                <div class="circle-border zoom-in">
+                                    <img class="img-circle" src="images/statutory audit.jpeg" alt="service 2" />
+                                </div>
+                                <h3>Statutory Audit</h3>
+                                <p>Go for a smooth ride. Get Auto loan at the best rates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service section end -->
+
+        <!-- Utilities section start -->
+        <div class="section secondary-section" id="utilities">
+            <div class="container">
+                <div class="title">
+                    <h1>Utilities</h1>
+                    <p>
+                        Basic calculators and links
+                    </p>
+                </div>
+                <div class="row-fluid">
+                    <div class="span5 contact-form centered animated bounceIn">
+                        <h3>EMI calculator</h3>
+                        <form id="emi-calculator" method="post">
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" type="text" onchange="value=formatNumber(value,2,0)" id="loan" name="loan" placeholder="* Loan Amount...">
+                                        <div class="error left-align" id="err-loan">Please enter the Loan Amount.</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" min="0" max="100" type="number" id="interest" name="interest" placeholder="* Rate of Interest (Per year)...">
+                                        <div class="error left-align" id="err-interest">Please enter the Rate of Interest.</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" type="number" min="0" step="1" id="duration" name="duration" placeholder="* Duration (Years)...">
+                                        <div class="error left-align" id="err-duration">Please enter the Duration.</div>
+                                </div>
+                            </div>
+                            <div class="left-align" style="color:#747C89">* Required</div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button id="calculate-emi" class="message-btn">Calculate EMI</button>
+                                </div>
+                            </div>
+
+                            <div class="left-align" style="color:#747C89" id="result-emi"></div>
+                        </form>
+                    </div>
+                    <div class="span5 contact-form centered animated bounceIn">
+                        <h3>Interest calculator</h3>
+                        <form id="interest-calculator" method="post">
+                            <div class="control-group">
+                                <div class="controls left-align" style="color:#747C89">
+                                    Interest Mode: <br>
+                                    <input type="radio" name="mode" value="simple" checked />Simple<br>
+                                    <input type="radio" name="mode" value="compound" />Compound
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" type="text" onchange="value=formatNumber(value,2,0)" id="principal" name="principal" placeholder="* Principal Amount...">
+                                        <div class="error left-align" id="err-principal">Please enter the Principal Amount.</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" min="0" max="100" type="number" id="cinterest" name="cinterest" placeholder="* Rate of Interest (Per Year)...">
+                                        <div class="error left-align" id="err-cinterest">Please enter the Rate of Interest (Per Year).</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" type="text" id="cstart" name="cstart" placeholder="* Start Date...">
+                                        <div class="error left-align" id="err-start">Please select the Start Date.</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <input class="span12" type="text" id="cend" name="cend" placeholder="* End Date...">
+                                        <div class="error left-align" id="err-end">Please select the End Date.</div>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <select class="span12" name="period" id="period" disabled>
+                                        <option value="0">-- Select Interest Compounding Period --</option>
+                                        <option value="daily">Daily</option>
+                                        <option value="monthly">Monthly</option>
+                                        <option value="quarterly">Quarerly</option>
+                                        <option value="half">Half-Yearly</option>
+                                        <option value="yearly">Yearly</option>
+                                    </select>
+                                    <div class="error left-align" id="err-period">Please select Interest Compounding Period.</div>
+                                </div>
+                            </div>
+                            <div class="left-align" style="color:#747C89">* Required</div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button id="calculate-interest" class="message-btn">Calculate Interest</button>
+                                </div>
+                            </div>
+
+                            <div class="left-align" style="color:#747C89" id="result-interest"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="title">
+                    <h1>Important Links</h1>
+                </div>
+                <div class="row-fluid">
+                    <div class="span4">
+                        <div class="left-align">
+                            <h3 class="centered">Income Tax</h3>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://onlineservices.tin.egov-nsdl.com/etaxnew/tdsnontds.jsp">E-payment of Taxes</a></li>
+                                <li><a target="_blank" href="https://incometaxindiaefiling.gov.in/e-Filing/UserLogin/LoginHome.html">Income Tax Assessee Login</a></li>
+                                <li><a target="_blank" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourPanLink.html">Verify PAN (from Name & DOB)</a></li>
+                                <li><a target="_blank" href="https://tin.tin.nsdl.com/oltas/refundstatuslogin.html">Status of Tax Refund</a></li>
+                                <li><a target="_blank" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/ITRVStatusLink.html">ITR-V Receipt Status</a></li>
+                                <li><a target="_blank" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourJurisdictionLink.html">Know your AO</a></li>
+                                <li><a target="_blank" href="https://tin.tin.nsdl.com/pan/correction.html">Online new PAN application/correction of PAN</a></li>
+                                <li><a target="_blank" href="https://www.tdscpc.gov.in/app/login.xhtml">TAN login</a></li>
+                                <li><a target="_blank" href="https://tin.tin.nsdl.com/oltas/index.html">OLTAS Challan status</a></li>
+                                <li><a target="_blank" href="https://onlineservices.tin.egov-nsdl.com/TIN/JSP/form16A/LinkToUnauthorizedView.jsp">Verify Form 16A</a></li>
+                                <li><a target="_blank" href="https://onlineservices.tin.egov-nsdl.com/TIN/JSP/form16/LinkToUnauthorizedView.jsp">Verify Form 16</a></li>
+                                <li><a target="_blank" href="https://incometaxindiaefiling.gov.in/e-Filing/Services/KnowYourTanLink.html">Know TAN</a></li>
+                                <li><a target="_blank" href="https://tin.tin.nsdl.com/tan/form49B.html">Online TAN application</a></li>
+                                <li><a target="_blank" href="https://tin.tin.nsdl.com/tan/ChangeRequest.html">Online TAN correction</a></li>
+                            </ul>
+                        </div>    
+                    </div>
+                    <div class="span4">
+                        <div class="left-align">
+                            <h3 class="centered">Ministry of Corporate Affairs</h3>
+                            <ul class="links">
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/MyMCALogin.do?method=setDefaultProperty&mode=31">Verify Co. Master Data</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/">MCA Login</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/SearchCIN.do">Find CIN</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/DetailsQueryName.do">Check Co./LLP Name</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/compDetails.do?method=isForView&sessioncheck=yes">View Public Documents</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/enquireFeeActionWithoutLogin.do?method=LLPNoneFormFeeSelection&sessioncheck=yes">Calculate Fee</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/MyMCALogin.do?method=setDefaultProperty&mode=50">Verify DIN-PAN Details of Directors</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/MyMCALogin.do?method=setDefaultProperty&sessioncheck=yes&mode=44">Verify Digitally Signed Certificate</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/trackPaymentStatus.do">Track Payment status</a></li>
+                                <li><a target="_blank" href="http://www.mca.gov.in/DCAPortalWeb/dca/compDetails.do?method=isForGet&sessioncheck=yes">Get Certified Copies</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="span4">
+                        <div class="left-align">
+                            <h3 class="centered">Other Links</h3>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://www.shcilestamp.com/eStampIndia/VerifyCertificate.es?rDoAction=VerifyCert">Property E-stamping - Verify Certificate</a></li>
+                                <li><a target="_blank" href="https://www.suratmunicipal.gov.in/Contents/Default.aspx">Surat Municipal Corporation</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Utilities section end-->
+
+
+        <!-- About us section start -->
+        <div class="section secondary-section" id="about">
+            <div class="triangle"></div>
+            <div class="container">
+                <div class="title">
+                    <h1>Who We Are?</h1>
+                    <p>Our Young, Dynamic, and Talented Leaders</p>
+                </div>
+                <div class="row-fluid team">
+                    <div class="container intro">
+                        <div class="left picture" id="first-person">
+                            <div class="thumbnail">
+                                <img src="images/rushabh_1.jpg" alt="team 1">
+                                <h3>Rushabh Vidani</h3>
+                                <ul class="social">
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/rushabh.vidani?fref=ts">
+                                            <span class="icon-facebook-circled"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="">
+                                            <span class="icon-twitter-circled"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="">
+                                            <span class="icon-linkedin-circled"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right right-align description">
+                            <h2 >RUSHABH A. VIDANI (B.Com., ACA, CS)</h2>
+                            <p>Mr Rushabh A. Vidani is the founding partner of SAR Finance. He is a Chartered Accountant by qualification and has a rich experience of over 7 years in the fields of Accounting, Auditing, Banking and Financial Analysis, where he has acquired excellent and profound skills. He holds a very good academic record and follows utmost honesty and integrity in his dealings with the clients. He has worked with reputed companies like SNK & Co., Chartered Accountants (in his early days as Article Assistant), PWC (one of the “Big Four” Auditing and Consultancy firms of the world) and Standard Chartered Bank (A Multinational Bank) over the years.</p>
+                        </div>
+                    </div>
+                    <div class="container intro">
+                        <div class="left description">
+                            <h2>SHAURIN V. SHAH (B.Com., ACA, CS)</h2>
+                            <p>When you stop expecting people to be perfect, you can like them for who they are.</p>
+                        </div>
+                        <div class="right picture" id="second-person">
+                            <div class="thumbnail">
+                                <img src="images/Team1.png" alt="team 1">
+                                <h3>Shaurin Shah</h3>
+                                <ul class="social">
+                                    <li>
+                                        <a target="_blank" href="https://www.facebook.com/shaurin.shah.75?fref=ts">
+                                            <span class="icon-facebook-circled"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="">
+                                            <span class="icon-twitter-circled"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="">
+                                            <span class="icon-linkedin-circled"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>                        
+                    </div>
+
+                </div>
+                <div class="about-text centered">
+                    <h3>About Us</h3>
+                    <p>SAR Finance is a leading firm in Financial and Consultancy Services.</p>
+                </div>
+            </div>
+        </div>
+        <!-- About us section end -->
+
+        <!-- Contact section start -->
+        <div id="contact" class="contact">
+            <div class="section secondary-section">
+                <div class="container">
+                    <div class="title">
+                        <h1>Contact Us</h1>
+                    </div>
+                </div>
+                <div class="map-wrapper">
+                    <div class="map-canvas" id="map-canvas">Loading map...</div>
+                    <div class="container">
+                        <div class="row-fluid">
+                            <div class="span5 contact-form centered">
+                                <h3>Say Hello</h3>
+                                <div id="successSend" class="alert alert-success invisible">
+                                    <strong>Well done!</strong>Your message has been sent.</div>
+                                <div id="errorSend" class="alert alert-error invisible">There was an error.</div>
+                                <form id="contact-form" action="php/mail.php">
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input class="span12" type="text" id="name" name="name" placeholder="* Your name..." />
+                                            <div class="error left-align" id="err-name">Please enter name.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <input class="span12" type="email" name="email" id="email" placeholder="* Your email..." />
+                                            <div class="error left-align" id="err-email">Please enter valid email adress.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <textarea class="span12" name="comment" id="comment" placeholder="* Comments..."></textarea>
+                                            <div class="error left-align" id="err-comment">Please enter your comment.</div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <button id="send-mail" class="message-btn">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="span9 center contact-info">
+                        <p>310, Diamond Trade Center (DTC),</p> 
+                        <p>Dalgiya Street, Mahidharpura,</p>
+                        <p>Surat, Gujarat, India - 395003</p>
+                        <p class="info-mail"><a href="mailto:contact@sarfinance.com">contact@sarfinance.com</a></p>
+                        <p>+91 97277 41161</p>
+                        <p>+91 98253 56754</p>
+                        <div class="title">
+                            <h3>We Are Social</h3>
+                        </div>
+                    </div>
+                    <div class="row-fluid centered">
+                        <ul class="social">
+                            <li>
+                                <a target="_blank" href="">
+                                    <span class="icon-facebook-circled"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="">
+                                    <span class="icon-twitter-circled"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="">
+                                    <span class="icon-linkedin-circled"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="">
+                                    <span class="icon-gplus-circled"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact section edn -->
+        <!-- Footer section start -->
+        <div class="footer">
+            <p>&copy; 2015 All Rights Reserved</p>
+        </div>
+        <!-- Footer section end -->
+        <!-- ScrollUp button start -->
+        <div class="scrollup">
+            <a href="#">
+                <i class="icon-up-open"></i>
+            </a>
+        </div>
+
+        <!-- ScrollUp button end -->
+        <!-- Include javascript -->
+        <script src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mixitup.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="js/jquery.bxslider.js"></script>
+        <script type="text/javascript" src="js/jquery.cslider.js"></script>
+        <script type="text/javascript" src="js/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="js/jquery.inview.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.js"></script>
+
+        <!-- Load google maps api and call initializeMap function defined in app.js -->
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;callback=initializeMap"></script>
+        <!-- css3-mediaqueries.js for IE8 or older -->
+        <!--[if lt IE 9]>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/app.js"></script>
+
+    </body>
+</html>
