@@ -56,18 +56,21 @@ jQuery(document).ready(function ($) {
         });
     });
 
-                $(function() {
-                $( "#cstart" ).datepicker({
-                changeMonth: true,
-                changeYear: true
-                });
-            });
-            $(function() {
-                $( "#cend" ).datepicker({
-                changeMonth: true,
-                changeYear: true
-                });
-            });
+    $(function() {
+        $( "#cstart" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "d MM, yy"
+        });
+    });
+
+    $(function() {
+        $( "#cend" ).datepicker({
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: "d MM, yy"
+        });
+    });
 
 
     //Initialize header slider.
@@ -293,16 +296,6 @@ jQuery(document).ready(function ($) {
     $("#calculate-interest").click(function (event){
 
         var m = $('input[name="mode"]:checked').val();
-        if(m=="0"){
-            $('#err-mode').show(500);
-            $('#err-mode').delay(4000);
-            $('#err-mode').animate({
-                height: 'toggle'
-            }, 500, function () {
-                // Animation complete.
-            });
-            error = true;            
-        }
 
         var pt = $('input#principal').val();
         var p = numval(pt,2,0);
@@ -357,6 +350,7 @@ jQuery(document).ready(function ($) {
         }
 
         var diff = end_dt.getTime() - start_dt.getTime();
+
         if(diff<0)
         {
             error = true;
@@ -391,6 +385,7 @@ jQuery(document).ready(function ($) {
 
             var days_elapsed = 0;
             var months_elapsed = 0;
+            var balance_days = 0;
 
             diff = diff/(1000*3600*24);
 
@@ -398,7 +393,7 @@ jQuery(document).ready(function ($) {
             var month = start_month;
 
             if( m == "simple"){
-                ci = p * r * diff / 100;
+                ci = Math.round( p * r * diff / (365 * 100));
             }
             else {
 
@@ -415,7 +410,9 @@ jQuery(document).ready(function ($) {
                             }
                             else
                             {
+                                balance_days = diff - days_elapsed;
                                 days_elapsed = diff;
+                                months_elapsed = months_elapsed + (balance_days/leap_month_days[month]);
                             }
                         }
                         if(month>=12){
@@ -424,15 +421,17 @@ jQuery(document).ready(function ($) {
                     }
                     else {
                         while(month<12 && days_elapsed!=diff){
-                            if(days_elapsed+leap_month_days[month]<=diff)
+                            if(days_elapsed+normal_month_days[month]<=diff)
                             {
                                 days_elapsed += normal_month_days[month];
-                                months_elapsed +=1;
+                                months_elapsed++;
                                 month++;
                             }
                             else
                             {
+                                balance_days = diff - days_elapsed;
                                 days_elapsed = diff;
+                                months_elapsed = months_elapsed + (balance_days/normal_month_days[month]);
                             }
                         }
                         if(month>=12){
@@ -441,9 +440,11 @@ jQuery(document).ready(function ($) {
                     }
                 }
 
-                var years_elapsed = months_elapsed / 12;
+                var years_elapsed = days_elapsed/365;
                 var quarters_elapsed = months_elapsed / 3;
                 var half_years_elapsed = months_elapsed / 6;
+
+                //$('div#result-interest').text("Days: "+ days_elapsed +" Years: " + years_elapsed +" Months: " + months_elapsed + " Quarters: " + quarters_elapsed + " Half-Years: " + half_years_elapsed);
 
                 switch(period)
                 {
@@ -468,9 +469,15 @@ jQuery(document).ready(function ($) {
                         break;
                 }
 
-                var a =Math.round( p * Math.pow(1+r,diff));
+                if(diff < 1 ){
+                    ci = Math.round(p * r *diff);
+                }
+                else {
 
-                var ci = a - p;
+                    var a = Math.round( p * Math.pow(1+r,diff));
+
+                    ci = a - p;
+                }
             }
 
             $('div#result-interest').text("Interest amount: ₹ " + ci);

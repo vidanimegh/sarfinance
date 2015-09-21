@@ -819,6 +819,7 @@ input[type="radio"] {
     background:#fff;
     background: rgba(255, 255, 255, 0.9);
     z-index:110;
+    color:#747C89;
     position:relative;
     margin-top:-25px;
     padding:20px;
@@ -862,6 +863,15 @@ input[type="radio"] {
     color: #fff;
     margin:0;
 }
+
+.footer > p > a {
+    color: #FECE1A;
+}
+
+.footer > p > a:hover {
+    color: #fff;
+}
+
 .scrollup {
     text-align:center;
     cursor:pointer;
