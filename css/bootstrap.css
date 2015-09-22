@@ -416,7 +416,7 @@ a:focus {
           box-sizing: border-box;
 }
 
-.row-fluid [class*="span"]:nth-child(3n-2) {
+.row-fluid [class*="span"]:first-child {
   margin-left: 0;
 }
 

@@ -38,8 +38,18 @@ jQuery(document).ready(function ($) {
                 return item;
             }
         });
+    
+    $('#services').on('shown.bs.collapse', function () {
+        $(".icon-angle-down").removeClass("icon-angle-down").addClass("icon-angle-up");
+    });
 
+    // $('#services').on('shown', function () {
+    //    $(".icon-angle-down").removeClass("icon-angle-down").addClass("icon-angle-up");
+    // });
 
+    $('#services').on('hidden', function () {
+       $(".icon-angle-up").removeClass("icon-angle-up").addClass("icon-angle-down");
+    });
 
     //Get width of container
     var containerWidth = $('.section .container').width();

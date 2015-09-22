@@ -78,7 +78,6 @@
 .da-slide h4{
     color: #181A1C;
     text-transform:uppercase;
-      white-space: nowrap;
     z-index: 10;
 }
 .da-slide h2 {
@@ -86,6 +85,47 @@
     width: 50%;
     top: 120px;
     font-weight:bold;
+}
+
+
+.da-slide .quote {
+font-family: Georgia, serif;
+font-size: 33px;
+font-style: italic;
+margin: 0.25em 0;
+padding: 0.35em 40px;
+line-height: 1.45;
+text-transform: none;
+color: #181A1C;
+}
+
+.da-slide .quote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 80px;
+left: -20px;
+top: -20px;
+position: absolute;
+color: #181A1C;
+}
+
+.da-slide .quote:after {
+display: block;
+padding-right: 10px;
+content: "\201E";
+font-size: 80px;
+right: -20px;
+bottom: -20px;
+position: absolute;
+color: #181A1C;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
 }
 
 .da-slide h4{
@@ -1271,6 +1311,19 @@
         font-size: 28px;
          top:40px;
     }
+
+    .da-slide .quote {
+        font-size: 28px;
+        top:40px;
+    }
+
+    .da-slide .quote:before {
+        font-size: 60px;
+    }
+
+    .da-slide .quote:after {
+        font-size: 60px;
+    }
     
      .da-slide h4 {
         font-size: 18px;
@@ -1299,6 +1352,19 @@
         font-size: 20px;
         top:40px;
     }
+
+    .da-slide .quote {
+        font-size: 20px;
+        top: 40px;
+    }
+
+    .da-slide .quote:before {
+        font-size: 50px;
+    }
+
+    .da-slide .quote:after {
+        font-size: 50px;
+    }
     
      .da-slide h4 {
         font-size: 16px;
@@ -1324,6 +1390,20 @@
         font-size: 16px;
         top:30px;
     }
+
+    .da-slide .quote {
+        font-size: 16px;
+        top:30px;
+    }
+
+    .da-slide .quote:before {
+        font-size: 40px;
+    }
+
+    .da-slide .quote:after {
+        font-size: 40px;
+    }
+
     .da-slide h4{
         font-size: 14px;
         top: 70px;
