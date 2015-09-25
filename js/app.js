@@ -39,17 +39,29 @@ jQuery(document).ready(function ($) {
             }
         });
     
-    $('#services').on('shown.bs.collapse', function () {
-        $(".icon-angle-down").removeClass("icon-angle-down").addClass("icon-angle-up");
+    $('#fin_services').on('shown.bs.collapse', function () {
+        $("#collapseF").removeClass("icon-angle-down").addClass("icon-angle-up");
     });
 
-    // $('#services').on('shown', function () {
-    //    $(".icon-angle-down").removeClass("icon-angle-down").addClass("icon-angle-up");
-    // });
-
-    $('#services').on('hidden', function () {
-       $(".icon-angle-up").removeClass("icon-angle-up").addClass("icon-angle-down");
+    $('#fin_services').on('hidden.bs.collapse', function () {
+       $("#collapseF").removeClass("icon-angle-up").addClass("icon-angle-down");
     });
+
+    $('#con_services').on('shown.bs.collapse', function () {
+        $("#collapseC").removeClass("icon-angle-down").addClass("icon-angle-up");
+    });
+
+    $('#con_services').on('hidden.bs.collapse', function () {
+       $("#collapseC").removeClass("icon-angle-up").addClass("icon-angle-down");
+    });
+
+    $('#nri_services').on('shown.bs.collapse', function () {
+        $("#collapseN").removeClass("icon-angle-down").addClass("icon-angle-up");
+    });
+
+    $('#nri_services').on('hidden.bs.collapse', function () {
+       $("#collapseN").removeClass("icon-angle-up").addClass("icon-angle-down");
+    });    
 
     //Get width of container
     var containerWidth = $('.section .container').width();
@@ -68,19 +80,47 @@ jQuery(document).ready(function ($) {
 
     $(function() {
         $( "#cstart" ).datepicker({
-        changeMonth: true,
-        changeYear: true,
-        dateFormat: "d MM, yy"
-        });
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "d MM, yy"
+        }).datepicker('setDate', new Date());
     });
 
     $(function() {
         $( "#cend" ).datepicker({
-        changeMonth: true,
-        changeYear: true,
-        dateFormat: "d MM, yy"
-        });
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "d MM, yy"
+        }).datepicker('setDate',new Date());
     });
+
+    // $("#cend").change(function(){
+    //     var start = $("#cstart").val();
+    //     var start_dt = new Date(start);
+
+    //     var end = $("#cend").val();
+    //     var end_dt = new Date(end);
+
+    //     var days = end_dt.getTime() - start_dt.getTime();
+    //     days = days / (1000*3600*24);
+
+    //     $("#cdays").text(days);
+    // });
+
+    // $("#cstart").change(function(){
+    //     var start = $("#cstart").val();
+    //     var start_dt = new Date(start);
+
+    //     var end = $("#cend").val();
+    //     var end_dt = new Date(end);
+
+    //     var days = end_dt.getTime() - start_dt.getTime();
+    //     days = days / (1000*3600*24);
+
+    //     $("#cdays").text(days);
+    // });
+
+    
 
 
     //Initialize header slider.
@@ -333,6 +373,8 @@ jQuery(document).ready(function ($) {
             error = true;
         }
 
+        //var days = $('input#cdays').val();
+
         var start = $('input#cstart').val(); // Start Date text
         var start_dt = new Date(start); // Start Date object
         if(start==""){
@@ -547,18 +589,13 @@ Sand mail
                 data: dataString,
                 timeout: 6000,
                 error: function (request, error) {
-
+                     $('#errorSend').show();
                 },
                 success: function (response) {
-                    response = $.parseJSON(response);
-                    if (response.success) {
-                        $('#successSend').show();
-                        $("#name").val('');
-                        $("#email").val('');
-                        $("#comment").val('');
-                    } else {
-                        $('#errorSend').show();
-                    }
+                    $('#successSend').show();
+                    $("#name").val('');
+                    $("#email").val('');
+                    $("#comment").val('');
                 }
             });
             return false;

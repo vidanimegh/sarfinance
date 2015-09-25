@@ -127,7 +127,7 @@ p {
     text-align: center;
 }
 /* Use this class if you want ceter element with span* class */
- .center {
+.center {
     float: none !important;
     margin: 0 auto !important;
     text-align: center;
@@ -309,6 +309,56 @@ p {
     top:0;
 }
 
+.quote {
+font-family: Georgia, serif;
+font-size: 20px;
+font-style: italic;
+margin: 0.25em 0;
+padding: 0.35em 40px;
+line-height: 1.45;
+text-transform: none;
+position: relative;
+/*position: absolute;*/
+/*color: #181A1C;*/
+}
+
+.quote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 50px;
+left: -20px;
+top: -20px;
+position: absolute;
+/*color: #181A1C;*/
+}
+
+.quote:after {
+display: block;
+padding-right: 10px;
+content: "\201E";
+font-size: 50px;
+right: -20px;
+bottom: -20px;
+position: absolute;
+/*color: #181A1C;*/
+}
+
+.bordered {
+    border: 1px #fff solid;
+}
+
+.goals {
+    width: 50%;
+}
+
+.goals > ul > li {
+    color: #fff;
+    text-align: left;
+    font-family: Georgia, serif;
+    font-style: italic;
+}
+
 /*
 2.4 Socail icons
 ************/
@@ -413,9 +463,9 @@ p {
     padding-top:15px;
 }
 .service p {
-    padding:0px 50px;
-    height:60px;
+    padding:0px 25px;
 }
+
 .service img {
     width:150px;
     height:150px;
@@ -538,10 +588,15 @@ input[type="radio"] {
 .about-text {
     margin-top:30px;
 }
-.about-text p {
+
+.about-text h3 {
+    font-size: 30px;
+}
+
+/*.about-text p {
     padding:0;
     font-size:16px;
-}
+}*/
 
 .intro {
     display: block;
@@ -824,6 +879,7 @@ input[type="radio"] {
     color:#747C89;
     position:relative;
     margin-top:-25px;
+    margin-bottom: 30px;
     padding:20px;
 }
 .contact-form h3 {
@@ -905,6 +961,10 @@ input[type="radio"] {
         border-radius:40px;
         line-height: 80px;
     }
+
+    .goals{
+        width: 50%;
+    }
 }
 @media (max-width: 979px) {
     body {
@@ -953,6 +1013,10 @@ input[type="radio"] {
     .newsletter form {
         text-align:center;
     }
+    .goals{
+        width: 50%;
+    }
+
 }
 @media (max-width: 767px) {
     .info-mail {
@@ -965,6 +1029,12 @@ input[type="radio"] {
     .price-column, .testimonial {
         margin-top:30px;
     }
+
+
+    .goals {
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-width:450px) and (max-width:599px) {
